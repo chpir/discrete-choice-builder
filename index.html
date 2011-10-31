@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Discrete Choice Experiment builder</title>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+  <script src="template.js"></script>
+  <script src="dce.js"></script>
+</head>
+
+
+<body id="home">
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>Discrete choice experiment builder</h1>
+        </div>
+        <div class="row">
+          <div class="span15">
+            <div id="checkboxes"></div>
+            <div><a href="#" onclick="reRandomize(); return false;">Re-randomize</a></div>
+            <br><br>
+            <div id="table"></div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; CHPIR 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+</body>
+</html>
