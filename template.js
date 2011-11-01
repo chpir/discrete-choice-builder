@@ -10,7 +10,8 @@ var data = {
         "Mobile VCT at the market",
       ],
       'with': false,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Location",
@@ -20,7 +21,8 @@ var data = {
         "Boma N'gombe",
       ],
       'with': 1,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Location",
@@ -30,7 +32,8 @@ var data = {
         "Semi-urban area",
       ],
       'with': 1,
-      'hidden': true
+      'hidden': true,
+      'table': 1
     },
     {
       'name': "Travel cost",
@@ -40,7 +43,8 @@ var data = {
         "3000 TSH by bus",
       ],
       'with': 1,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Travel Reimbursement",
@@ -51,7 +55,8 @@ var data = {
         "Travel Reimbursement + 3000 TSH",
       ],
       'with': 1,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Confidentiality of results",
@@ -60,7 +65,8 @@ var data = {
         "Counselor hands you a sealed envelope with the result",
       ],
       'with': false,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Treatment availability",
@@ -69,7 +75,8 @@ var data = {
         "Referral to HIV CTC if positive",
       ],
       'with': false,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Opening hours",
@@ -79,7 +86,8 @@ var data = {
         "24 hours, every day",
       ],
       'with': false,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Type of test",
@@ -90,7 +98,8 @@ var data = {
         "Urine sample",
       ],
       'with': false,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Type of test - this is an exact duplicate, not sure if it's a mistake or not",
@@ -101,7 +110,8 @@ var data = {
         "Urine sample",
       ],
       'with': false,
-      'hidden': true
+      'hidden': true,
+      'table': 1
     },
     {
       'name': "Counselor gender",
@@ -111,7 +121,8 @@ var data = {
         "Self test",
       ],
       'with': 2,
-      'hidden': false
+      'hidden': false,
+      'table': 1
     },
     {
       'name': "Counselor age",
@@ -122,7 +133,8 @@ var data = {
         "Age 64",
       ],
       'with': 2,
-      'hidden': false
+      'hidden': false,
+      'table': 2
     },
     {
       'name': "Counselor experience",
@@ -132,7 +144,8 @@ var data = {
         "Medical/Nursing degree and 10 years of VCT experience",
       ],
       'with': 2,
-      'hidden': false
+      'hidden': false,
+      'table': 2
     },
   ]
 }

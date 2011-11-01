@@ -13,7 +13,17 @@
  ';
 
  // Create template for table
- var tableTemplate = '\
+ var tableTemplate1 = '\
+ <table> \
+   <tr><th>Name</th><th>Choice A</th><th>Choice B</th></tr> \
+   {{#attributes}}\
+     {{^hidden}}\
+       <tr><td width="200">{{name}}</td><td width="200">{{choice_a}}</td><td>{{choice_b}}</td></tr> \
+     {{/hidden}}\
+   {{/attributes}}\
+ </table>\
+ ';
+ var tableTemplate2 = '\
  <table> \
    <tr><th>Name</th><th>Choice A</th><th>Choice B</th></tr> \
    {{#attributes}}\
@@ -23,6 +33,7 @@
    {{/attributes}}\
  </table>\
  ';
+ 
 
  // From http://sedition.com/perl/javascript-fy.html
  function fisherYates ( myArray ) {
@@ -37,7 +48,7 @@
     }
  }
 
- function randomizeData(data) {
+ function randomizeAttributes(data) {
    var out = {'attributes': []}
    var len = data['attributes'].length;
 
@@ -69,41 +80,57 @@
        });
      }
    }
+   return out;
+}
 
+ function randomizeLevels(data) {
    // Randomize option a and option b
-   $.each(out['attributes'], function(i, attr){
-     var rand1 = rand2 = Math.floor(Math.random()*attr['levels'].length)
-     while (rand1 == rand2) {
-       rand2 = Math.floor(Math.random()*attr['levels'].length)
-     }
+   $.each(data['attributes'], function(i, attr){
+     var rand1 = Math.floor(Math.random()*attr['levels'].length)
+     var rand2 = Math.floor(Math.random()*attr['levels'].length)
      attr['choice_a'] = attr['levels'][rand1]
      attr['choice_b'] = attr['levels'][rand2]
    });
-   return out;
+   return data;
  }
 
- function reRandomize() {
-   tableData = randomizeData(tableData);
-   updateTable(tableTemplate, tableData);
+ function reRandomizeAttributes() {
+   tableData = randomizeAttributes(tableData);
+   updateTables(tableData);
  }
+function reRandomizeLevels() {
+   tableData = randomizeLevels(tableData);
+   updateTables(tableData);
+ }
+
 
  function updateCheckboxes(template, data) {
    $('#checkboxes').html(Mustache.to_html(template, data));
  }
 
- function updateTable(template, data) {
-   $('#table').html(Mustache.to_html(template, data));
+ function getDataForTable(data, tableNumber) {
+ 	var out = {'attributes': []}
+	for (i=0; i<data['attributes'].length; i++) {
+		if(data['attributes'][i]['table'] == tableNumber) {
+		 	out['attributes'].push(data['attributes'][i]);	
+		}
+	}
+	return out;
+}
+ function updateTables(data) {
+   $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(data, 1)));
+   $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(data, 2)));
  }
 
 
  // Initially randomize data
- var tableData = randomizeData(data);
+ var tableData = randomizeLevels(randomizeAttributes(data));
 
 
  $(function() { // This block runs on page load.
    
    updateCheckboxes(checkboxTemplate, data);
-   updateTable(tableTemplate, tableData);
+   updateTables(tableData);
    
    // bind listener to clicks on checkboxes
    $('.chck').click(function() {
@@ -111,7 +138,7 @@
      $.each(tableData['attributes'], function(i, d){
        if (d['index'] == parseInt($this.data('index'))) {
          d['hidden'] = !$this.prop("checked");
-         updateTable(tableTemplate, tableData);
+         updateTables(tableData);
          return false; //break
        }
      });
