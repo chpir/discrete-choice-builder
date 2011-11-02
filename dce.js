@@ -23,7 +23,7 @@
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
-   <tr><td colspan=3 align="center"><b>Which option do you prefer?</b></td></tr> \
+   <tr><td colspan=3 align="center"><b>Which option do you prefer, A or B?</b></td></tr> \
  </table>\
  ';
  var tableTemplate2 = '\
@@ -35,7 +35,7 @@
        <tr><td>{{name}}</td><td>{{choice_a}}</td><td>{{choice_b}}</td><td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
-   <tr><td colspan=4><b>Which option would you choose?</b></td></tr> \
+   <tr><td colspan=4><b>Which option would you choose (A, B, or No test)?</b></td></tr> \
  </table>\
  ';
  

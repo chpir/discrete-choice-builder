@@ -3,14 +3,14 @@ var data = {
     {
       'name': "Testing Venue",
       'levels': [
-        "Clinic",
+        "Health Center",
         "Free-standing VCT centre",
         "Doctor's office",
         "Dispensary",
         "Mobile VCT at the market",
         "Home",
       ],
-      'with': false,
+      'with': 3,
       'hidden': false,
       'table': 1
     },
@@ -18,33 +18,21 @@ var data = {
       'name': "Treatment availability",
       'levels': [
         "HIV treatment available on-site",
-        "Referral to HIV CTC if positive",
+        "Referral to HIV CTC",
       ],
       'with': 3,
       'hidden': false,
       'table': 1
     },
     {
-      'name': "Additional services",
+      'name': "Testing components",
       'levels': [
-        "No additional services",
-        "Diabetes screening",
-        "Blood pressure screening",
-        "Complete health check-up",
+        "Testing and counseling",
+        "Testing only (no self test)",
+        "Self test",
       ],
       'with': 3,
-      'hidden': false,
-      'table': 1
-    },
-    {
-      'name': "Opening hours",
-      'levels': [
-        "Monday through Friday, until 8pm",
-        "Monday through Saturday, until 4pm",
-        "All the time, every day",
-      ],
-      'with': false,
-      'hidden': false,
+      'hidden': true,
       'table': 1
     },
     {
@@ -60,11 +48,54 @@ var data = {
       'table': 1
     },
     {
+      'name': "Additional services",
+      'levels': [
+        "No additional services",
+        "Vaccinations",
+        "Diabetes screening",
+        "Blood pressure screening",
+        "Complete health check-up",
+      ],
+      'with': 3,
+      'hidden': false,
+      'table': 1
+    },
+    {
+      'name': "Opening hours",
+      'levels': [
+        "Monday through Friday, 8am to 6pm",
+        "All day, every day",
+      ],
+      'with': false,
+      'hidden': true,
+      'table': 1
+    },
+    {
+      'name': "Waiting time",
+      'levels': [
+        "No waiting time",
+        "15 minutes waiting time",
+        "45 minutes waiting time",
+      ],
+      'with': false,
+      'hidden': true,
+      'table': 1
+    },
+    {
       'name': "Counselor gender",
       'levels': [
         "Male counselor",
         "Female counselor",
-        "Self test",
+      ],
+      'with': 2,
+      'hidden': false,
+      'table': 1
+    },
+    {
+      'name': "Counselor origin",
+      'levels': [
+        "From Moshi",
+        "From another town",
       ],
       'with': 2,
       'hidden': false,
@@ -129,7 +160,7 @@ var data = {
       'name': "Moshi vs. Elsewhere",
       'levels': [
         "Moshi",
-        "Other urban area",
+        "Urban area other than Moshi",
       ],
       'with': 1,
       'hidden': true,
@@ -138,9 +169,20 @@ var data = {
     {
       'name': "Travel cost",
       'levels': [
-        "200 TSH by daladala",
-        "800 TSH by bus",
-        "3000 TSH by bus",
+        "200 TSH",
+        "800 TSH",
+        "3000 TSH",
+      ],
+      'with': 1,
+      'hidden': true,
+      'table': 2
+    },
+    {
+      'name': "Travel mode",
+      'levels': [
+        "Bus",
+        "Private car",
+        "Dala dala",
       ],
       'with': 1,
       'hidden': true,
