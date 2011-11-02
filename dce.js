@@ -14,23 +14,28 @@
 
  // Create template for table
  var tableTemplate1 = '\
- <table> \
-   <tr><th>Name</th><th>Choice A</th><th>Choice B</th></tr> \
-   {{#attributes}}\
-     {{^hidden}}\
-       <tr><td width="200">{{name}}</td><td width="200">{{choice_a}}</td><td>{{choice_b}}</td></tr> \
-     {{/hidden}}\
-   {{/attributes}}\
- </table>\
- ';
- var tableTemplate2 = '\
- <table> \
-   <tr><th>Name</th><th>Choice A</th><th>Choice B</th></tr> \
+ <br><b>First, please tell me which of these HIV testing options you would prefer:</b><br>\
+ <table class="zebra-striped"> \
+   <tr><th width="150">Test characteristics</th><th width="150">Option A</th><th width="150">Option B</th></tr> \
    {{#attributes}}\
      {{^hidden}}\
        <tr><td>{{name}}</td><td>{{choice_a}}</td><td>{{choice_b}}</td></tr> \
      {{/hidden}}\
    {{/attributes}}\
+   <tr></tr>\
+   <tr><td colspan=3 align="center"><b>Which option do you prefer?</b></td></tr> \
+ </table>\
+ ';
+ var tableTemplate2 = '\
+ <br><br><b>If this test were actually offered to you, in which location, if any, would you choose to test?</b><br>\
+ <table class="zebra-striped"> \
+   <tr><th width=180>Test Location</th><th width=165>Option A</th><th width=165>Option B</th><th width=50>No Test</th></tr> \
+   {{#attributes}}\
+     {{^hidden}}\
+       <tr><td>{{name}}</td><td>{{choice_a}}</td><td>{{choice_b}}</td><td></td></tr> \
+     {{/hidden}}\
+   {{/attributes}}\
+   <tr><td colspan=4><b>Which option would you choose?</b></td></tr> \
  </table>\
  ';
  
@@ -119,6 +124,7 @@ function reRandomizeLevels() {
 }
  function updateTables(data) {
    $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(data, 1)));
+   
    $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(data, 2)));
  }
 
@@ -131,7 +137,7 @@ function reRandomizeLevels() {
    
    updateCheckboxes(checkboxTemplate, data);
    updateTables(tableData);
-   
+
    // bind listener to clicks on checkboxes
    $('.chck').click(function() {
      $this = $(this)

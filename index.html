@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Discrete Choice Experiment builder</title>
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+  <title>DCE sample builder</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css" />
 
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="mustache.js"></script>
+  <script src="jquery.tablesorter.min.js"></script>
   <script src="template.js"></script>
   <script src="dce.js"></script>
 </head>
@@ -22,14 +23,15 @@
 
       <div class="content">
         <div class="page-header">
-          <h1>Discrete choice experiment builder</h1>
+          <h1>DCE sample builder</h1>
         </div>
         <div class="row">
           <div class="span15">
             <div id="checkboxes"></div>
-            <div><a href="#" onclick="reRandomizeAttributes(); return false;">Re-randomize Attributes</a></div>
-            <div><a href="#" onclick="reRandomizeLevels(); return false;">Re-randomize Levels</a></div>
-            <br><br>
+            <br>Re-randomize: 
+            <div><a href="#" onclick="reRandomizeAttributes(); return false;">Attributes</a></div>
+            <div><a href="#" onclick="reRandomizeLevels(); return false;">Attribute Levels</a></div>
+            <br>
             <div id="table1"></div>
             <div id="table2"></div>
           </div>
