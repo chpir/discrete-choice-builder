@@ -3,15 +3,27 @@
    item['index'] = i
  })
 
- // Create template for checkboxes
+// Create template for checkboxes
  var checkboxTemplate = '\
+ <table> \
+ <tr><th width="200">Attribute</th><th >Levels</th><th >Fixed?</th><th >Table</th></tr>\
  <ul class="inputs-list">\
  {{#attributes}}\
-   <li><label><input type="checkbox" data-index="{{index}}" class="chck" {{^hidden}}checked="checked"{{/hidden}}> {{name}}</label></li>\
+ <tr><td>\
+   <input type="checkbox" data-index="{{index}}" class="chck" {{^hidden}}checked="checked"{{/hidden}}> {{name}}\
+ </td><td class="levels">\
+	{{{levels}}}\
+ </td>\
+ </td><td class="chck">\
+   <input type="checkbox" id="chck-fixed-{{index}}" {{#fixed}}checked="checked"{{/fixed}}>\
+ </td><td>\
+ 	{{table}}\
+ </td></tr>\
  {{/attributes}}\
  </ul>\
+ </table>\
  ';
-
+ 
  // Create template for table
  var tableTemplate1 = '\
  <br><b>First, please tell me which of these HIV testing options you would prefer:</b><br>\
@@ -19,11 +31,11 @@
    <tr><th width="150">Test characteristics</th><th width="150">Option A</th><th width="150">Option B</th></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td>{{name}}</td><td>{{choice_a}}</td><td>{{choice_b}}</td></tr> \
+       <tr><td>{{name}}</td><td>{{{choice_a}}}</td><td>{{{choice_b}}}</td></tr> \
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
-   <tr><td colspan=3 align="center"><b>Which option do you prefer, A or B?</b></td></tr> \
+   <tr><td colspan=3 align="center"><b>Which option do you prefer (A or B)?</b></td></tr> \
  </table>\
  ';
  var tableTemplate2 = '\
@@ -39,7 +51,6 @@
  </table>\
  ';
  
-
  // From http://sedition.com/perl/javascript-fy.html
  function fisherYates ( myArray ) {
    var i = myArray.length;
@@ -92,9 +103,21 @@
    // Randomize option a and option b
    $.each(data['attributes'], function(i, attr){
      var rand1 = Math.floor(Math.random()*attr['levels'].length)
-     var rand2 = Math.floor(Math.random()*attr['levels'].length)
+     if($('#chck-fixed-'+attr['index']+':checked').length > 0) {
+     	var rand2 = rand1
+     }
+     else {
+    	 var rand2 = Math.floor(Math.random()*attr['levels'].length)
+     }
      attr['choice_a'] = attr['levels'][rand1]
      attr['choice_b'] = attr['levels'][rand2]
+
+     attr['choice_a'] = attr['choice_a'].replace(">","\" width=\"150\" height=\"110\">")
+     attr['choice_a'] = attr['choice_a'].replace("<","<br><img src=\"gr\\")
+     
+     attr['choice_b'] = attr['choice_b'].replace(">","\" width=\"150\" height=\"110\">")
+     attr['choice_b'] = attr['choice_b'].replace("<","<br><img src=\"gr\\")
+
    });
    return data;
  }
@@ -103,7 +126,8 @@
    tableData = randomizeAttributes(tableData);
    updateTables(tableData);
  }
-function reRandomizeLevels() {
+ 
+ function reRandomizeLevels() {
    tableData = randomizeLevels(tableData);
    updateTables(tableData);
  }
@@ -111,6 +135,13 @@ function reRandomizeLevels() {
 
  function updateCheckboxes(template, data) {
    $('#checkboxes').html(Mustache.to_html(template, data));
+   $('.levels').each(function(i, elem) {
+   		var $elem = $(elem);
+   		var newHtml = "<ol>"+$.map($elem.text().split(/,/g), function(val) {
+   			return "<li>"+val+"</li>"
+   		}).join('')+"</ol>";
+   		$elem.html(newHtml);
+  	});
  }
 
  function getDataForTable(data, tableNumber) {
@@ -121,7 +152,8 @@ function reRandomizeLevels() {
 		}
 	}
 	return out;
-}
+ }
+ 
  function updateTables(data) {
    $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(data, 1)));
    

@@ -3,12 +3,12 @@ var data = {
     {
       'name': "Testing Venue",
       'levels': [
-        "Health Center",
-        "Free-standing VCT centre",
-        "Doctor's office",
-        "Dispensary",
-        "Mobile VCT at the market",
-        "Home",
+		"Health centre <hospital.jpg>",
+        "Free-standing VCT <vct.jpg>" ,
+        "Doctor's office <doctor.png>",
+        "Dispensary <dispensary.jpg>",
+        "Mobile VCT (market) <mobile.jpg>",
+        "Home <home-based.jpg>",
       ],
       'with': 3,
       'hidden': false,
@@ -18,7 +18,7 @@ var data = {
       'name': "Treatment availability",
       'levels': [
         "HIV treatment available on-site",
-        "Referral to HIV CTC",
+        "Referral to HIV CTC if positive",
       ],
       'with': 3,
       'hidden': false,
@@ -28,7 +28,7 @@ var data = {
       'name': "Testing components",
       'levels': [
         "Testing and counseling",
-        "Testing only (no self test)",
+        "Testing only",
         "Self test",
       ],
       'with': 3,
@@ -38,10 +38,10 @@ var data = {
     {
       'name': "Type of test",
       'levels': [
-        "Blood draw",
-        "Needle prick",
-        "Oral swab",
-        "Urine sample",
+        "Blood draw <test_blood.jpg>",
+        "Needle prick <test_pinprick.jpg>",
+        "Oral swab <test_oral.jpg>",
+        "Urine sample <test_urine.jpg>",
       ],
       'with': false,
       'hidden': false,
@@ -51,6 +51,7 @@ var data = {
       'name': "Additional services",
       'levels': [
         "No additional services",
+        "Wali na maharage",
         "Vaccinations",
         "Diabetes screening",
         "Blood pressure screening",
@@ -64,7 +65,7 @@ var data = {
       'name': "Opening hours",
       'levels': [
         "Monday through Friday, 8am to 6pm",
-        "All day, every day",
+        "Always open",
       ],
       'with': false,
       'hidden': true,
@@ -74,8 +75,8 @@ var data = {
       'name': "Waiting time",
       'levels': [
         "No waiting time",
-        "15 minutes waiting time",
-        "45 minutes waiting time",
+        "30 minutes waiting time",
+        "1 hour waiting time",
       ],
       'with': false,
       'hidden': true,
@@ -106,7 +107,7 @@ var data = {
       'levels': [
         "5 years of VCT experience",
         "10 years of VCT experience",
-        "Medical degree, 10 years of VCT experience",
+        "Medical degree and 10 years of VCT experience",
       ],
       'with': 2,
       'hidden': false,
@@ -183,6 +184,17 @@ var data = {
         "Bus",
         "Private car",
         "Dala dala",
+      ],
+      'with': 1,
+      'hidden': true,
+      'table': 2
+    },
+    {
+      'name': "Travel time",
+      'levels': [
+        "15 minutes",
+        "45 minutes",
+        "2 hours",
       ],
       'with': 1,
       'hidden': true,
