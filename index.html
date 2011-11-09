@@ -16,28 +16,69 @@
   <script src="dce.js"></script>
 </head>
 
-
 <body id="home">
-
     <div class="container">
-
       <div class="content">
         <div class="page-header">
-          <h1>DCE builder</h1>
-          <h2>"HIV counseling and testing preferences in Tanzania"</h2>
+          <h1><center>"HIV counseling and testing preferences in Tanzania"</h1>
+          <h3><center>DCE sample builder</h3>
         </div>
+		<center><b>Click <a href="#attributes">here</a> to select or un-select attributes</b>
+      </div>
+
+		<dl>
+		<dt>
+			<br>
+			Re-randomize 
+			<a href="#" onclick="reRandomizeAttributes(); return false;"> Attributes</a> or 
+        	<a href="#" onclick="reRandomizeLevels(); return false;"> Levels.</a></dt>
+		</dl>
+    </div>
+	
+	
+
+    <div class="container">
+      <div class="content">
+        <div class="row">
+	        <div class="span15">
+				<h3>Please tell me which of these two HIV testing options you would prefer:</h3>
+		        <div id="table1"></div>
+	        </div>
+	        </div>
+	    </div>
+      </div>
+
+
+    </div>
+
+		
+    <div class="container">
+		<dl>
+		<br>
+		<dt>Re-randomize 
+			<a href="#" onclick="reRandomizeAttributes(); return false;"> Attributes</a> or 
+        	<a href="#" onclick="reRandomizeLevels(); return false;"> Levels. </a></dt>
+		</dl>    
+
+      <div class="content">
         <div class="row">
           <div class="span15">
+			<dl>
+ 				<h3>If you were offered this test in the next month, would you take this test, and <u>if so</u>, in which location?</h3>
+            	<div id="table2"></div>
+			</dl>  
+	    </div>
+      </div>
+    </div>
+            	
+            	
 		<dl>
-		<dt>Select or un-select attributes in the table at the bottom of this page.</dt>
-		<dt>Click here to re-randomize:</dt>
-            <dd><div><a href="#" onclick="reRandomizeAttributes(); return false;"> Attributes</a></div></dd>
-        	<dd><div><a href="#" onclick="reRandomizeLevels(); return false;"> Levels</a></div></dd>
-		</dl>        
-            <div id="table1"></div>
-            <div id="table2"></div>
-            <br>
-			<br>
+		<br>
+		<dt>Re-randomize 
+			<a href="#" onclick="reRandomizeAttributes(); return false;"> Attributes</a> or 
+        	<a href="#" onclick="reRandomizeLevels(); return false;"> Levels. </a></dt>
+		</dl>    <br>    
+			<a NAME="attributes"></a>
             <div id="checkboxes"></div>
           </div>
         </div>

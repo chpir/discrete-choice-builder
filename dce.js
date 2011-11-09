@@ -6,7 +6,11 @@
 // Create template for checkboxes
  var checkboxTemplate = '\
  <table> \
- <tr><th width="200">Attribute</th><th >Levels</th><th >Fixed?</th><th >Table</th></tr>\
+ <col width=25%> \
+ <col width=40%> \
+ <col width=18%> \
+ <col width=16%> \
+ <tr><td><b>Attribute</td><td><b>Levels</td><td style="text-align:center"><b>Fixed?</td><td style="text-align:center"><b>Table</td></tr>\
  <ul class="inputs-list">\
  {{#attributes}}\
  <tr><td>\
@@ -14,9 +18,9 @@
  </td><td class="levels">\
 	{{{levels}}}\
  </td>\
- </td><td class="chck">\
+ </td><td class="chck" style="text-align:center">\
    <input type="checkbox" id="chck-fixed-{{index}}" {{#fixed}}checked="checked"{{/fixed}}>\
- </td><td>\
+ </td><td style="text-align:center">\
  	{{table}}\
  </td></tr>\
  {{/attributes}}\
@@ -26,28 +30,34 @@
  
  // Create template for table
  var tableTemplate1 = '\
- <br><b>First, please tell me which of these HIV testing options you would prefer:</b><br>\
- <table class="zebra-striped"> \
-   <tr><th width="150">Test characteristics</th><th width="150">Option A</th><th width="150">Option B</th></tr> \
+ <table style="text-align:center width="80%"> \
+ <col width=21%> \
+ <col width=23%> \
+ <col width=23%> \
+ <col width=16%> \
+   <tr><td><h3></b></td><td style="text-align:center"><h3>Option A</td><td style="text-align:center"><h3>Option B</td><td>Derek? could we offer a third choice?</td></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td>{{name}}</td><td>{{{choice_a}}}</td><td>{{{choice_b}}}</td></tr> \
+       <tr><td><b>{{name}}</b></td><td style="text-align:center">{{{choice_a}}}</td><td style="text-align:center">{{{choice_b}}}</td><td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
-   <tr><td colspan=3 align="center"><b>Which option do you prefer (A or B)?</b></td></tr> \
+   <tr><td><h3>Please select one:</b></td><td style="text-align:center"><h3><font color="red">Option A</td><td style="text-align:center"><h3><font color="red">Option B</td><td></td></tr> \
  </table>\
  ';
  var tableTemplate2 = '\
- <br><br><b>If this test were actually offered to you, in which location, if any, would you choose to test?</b><br>\
- <table class="zebra-striped"> \
-   <tr><th width=180>Test Location</th><th width=165>Option A</th><th width=165>Option B</th><th width=50>No Test</th></tr> \
+ <table > \
+ <col width=21%> \
+ <col width=23%> \
+ <col width=23%> \
+ <col width=16%> \
+   <tr><td><h3></b></td><td style="text-align:center"><h3>Option A</td><td style="text-align:center"><h3>Option B</td><td style="text-align:center"><h3>Defer Test</td></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td>{{name}}</td><td>{{choice_a}}</td><td>{{choice_b}}</td><td></td></tr> \
+       <tr><td><b>{{name}}</b></td><td style="text-align:center">{{{choice_a}}}</td><td style="text-align:center">{{{choice_b}}}</td><td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
-   <tr><td colspan=4><b>Which option would you choose (A, B, or No test)?</b></td></tr> \
+   <tr><td><h3>Please select one:</b></td><td style="text-align:center"><h3><font color="red">Option A</td><td style="text-align:center"><h3><font color="red">Option B</td><td style="text-align:center"><h3><font color="red">Defer Test</td></tr> \
  </table>\
  ';
  
