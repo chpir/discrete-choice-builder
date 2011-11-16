@@ -17,7 +17,7 @@ var data = {
     {
       'name': "Treatment availability",
       'levels': [
-        "HIV medications available on-site <treatment.jpg>",
+        "HIV medications on-site <treatment.jpg>",
         "Referral to CTC if HIV+ <referral.jpg>",
       ],
       'with': 3,
@@ -58,19 +58,6 @@ var data = {
       'table': 1
     },
     {
-      'name': "Additional services",
-      'levels': [
-        "No additional services",
-        "Wali na maharage <walinamaharage.jpg>",
-        "Vaccinations <vaccinations.jpg>",
-        "Blood pressure screening <blood_pressure.jpg>",
-        "Complete health check-up <vision_screening.jpg>",
-      ],
-      'with': 3,
-      'hidden': false,
-      'table': 1
-    },
-    {
       'name': "Opening hours",
       'levels': [
         "Monday through Friday, 8am to 6pm",
@@ -92,7 +79,7 @@ var data = {
       'table': 1
     },
     {
-      'name': "Counselor gender & type",
+      'name': "Test administration",
       'levels': [
         "Male doctor <male_doctor.jpg\"  width=\"120\">",
         "Female doctor <female_doctor.jpg\"  height=\"100\" width=\"85\">",
@@ -170,9 +157,9 @@ var data = {
     {
       'name': "Travel cost",
       'levels': [
-        "200 /= <tsh200.jpg\" height=\"80\" width=\"80\">",
-        "1000 /= <tsh1000.jpg\" height=\"80\">",
-        "5000 /= <tsh5000.jpg\" height=\"80\">",
+        "200 /= <TSH200.jpg\" height=\"80\" width=\"80\">",
+        "1000 /= <TSH1000.jpg\" height=\"80\">",
+        "5000 /= <TSH5000.jpg\" height=\"80\">",
       ],
       'with': 1,
       'hidden': true,
@@ -203,12 +190,25 @@ var data = {
     {
       'name': "Travel Reimbursement",
       'levels': [
-        "No Travel Reimbursement <nomoney.jpg\" height=\"90\" width=\"110\">",
+        "No Travel Reimbursement <nomoney.jpg\" height=\"90\" width=\"100\">",
         "Reimbursement of travel cost <reimbursement.jpg\" height=\"90\" width=\"110\">",
         "Travel Reimbursement + 500 /= <TSH500.jpg\" height=\"80\">",
         "Travel Reimbursement + 2000 /= <TSH2000.jpg\" height=\"80\">",
       ],
       'with': 1,
+      'hidden': false,
+      'table': 2
+    },
+    {
+      'name': "Additional services",
+      'levels': [
+        "No additional services",
+        "Wali na maharage <walinamaharage.jpg>",
+        "Vaccinations <vaccinations.jpg>",
+        "Blood pressure screening <blood_pressure.jpg>",
+        "Complete health check-up <vision_screening.jpg>",
+      ],
+      'with': 3,
       'hidden': false,
       'table': 2
     },

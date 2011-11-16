@@ -2,65 +2,82 @@
  $.each(data['attributes'], function(i, item) {
    item['index'] = i
  })
-
-// Create template for checkboxes
- var checkboxTemplate = '\
- <table> \
- <col width=25%> \
- <col width=40%> \
- <col width=18%> \
- <col width=16%> \
- <tr><td><b>Attribute</td><td><b>Levels</td><td style="text-align:center"><b>Fixed?</td><td style="text-align:center"><b>Table</td></tr>\
- <ul class="inputs-list">\
- {{#attributes}}\
- <tr><td>\
-   <input type="checkbox" data-index="{{index}}" class="chck" {{^hidden}}checked="checked"{{/hidden}}> {{name}}\
- </td><td class="levels">\
-	{{{levels}}}\
- </td>\
- </td><td class="chck" style="text-align:center">\
-   <input type="checkbox" id="chck-fixed-{{index}}" {{#fixed}}checked="checked"{{/fixed}}>\
- </td><td style="text-align:center">\
- 	{{table}}\
- </td></tr>\
- {{/attributes}}\
- </ul>\
- </table>\
- ';
  
  // Create template for table
  var tableTemplate1 = '\
  <table style="text-align:center width="80%"> \
- <col width=21%> \
+ <col width=10%> \
  <col width=23%> \
  <col width=23%> \
- <col width=16%> \
-   <tr><td><h3></b></td><td style="text-align:center"><h3>Option A</td><td style="text-align:center"><h3>Option B</td><td>Derek? could we offer a third choice?</td></tr> \
+   <tr> \
+   <td></td>\
+   <td style="text-align:center"><h3>Option A</td>\
+   <td style="text-align:center"><h3>Option B</td>\
+   </tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td><b>{{name}}</b></td><td style="text-align:center">{{{choice_a}}}</td><td style="text-align:center">{{{choice_b}}}</td><td></td></tr> \
+       <tr><td style="padding:20"><b><font size=+1>{{{name}}}</b><br><br><br><br><br><br><br><br></td><td style="text-align:center"><font size=+1>{{{choice_a}}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}</td></tr> \
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
-   <tr><td><h3>Please select one:</b></td><td style="text-align:center"><h3><font color="red">Option A</td><td style="text-align:center"><h3><font color="red">Option B</td><td></td></tr> \
+   <tr><td><h3>Please select one:</b></td>\
+   <td style="text-align:center" onClick=window.location="#lower"><h3><font color="red">Option A</td>\
+   <td style="text-align:center" onClick=window.location="#lower"><h3><font color="red">Option B</td>\
  </table>\
  ';
  var tableTemplate2 = '\
  <table > \
- <col width=21%> \
+ <col width=10%> \
  <col width=23%> \
  <col width=23%> \
- <col width=16%> \
-   <tr><td><h3></b></td><td style="text-align:center"><h3>Option A</td><td style="text-align:center"><h3>Option B</td><td style="text-align:center"><h3>Defer Test</td></tr> \
+ <col width=15%> \
+   <tr> \
+   <td></td>\
+   <td style="text-align:center"><h3>Option A</td>\
+   <td style="text-align:center"><h3>Option B</td> \
+   <td style="text-align:center"><h3>Not now</td></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td><b>{{name}}</b></td><td style="text-align:center">{{{choice_a}}}</td><td style="text-align:center">{{{choice_b}}}</td><td></td></tr> \
+       <tr><td><b><font size=+1>{{name}}<br><br><br><br><br><br><br><br></font></td><td style="text-align:center"><font size=+1>{{{choice_a}}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}</td>\
+       <td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
-   <tr><td><h3>Please select one:</b></td><td style="text-align:center"><h3><font color="red">Option A</td><td style="text-align:center"><h3><font color="red">Option B</td><td style="text-align:center"><h3><font color="red">Defer Test</td></tr> \
+   <tr><td><h3>Please select one:</b></td>\
+   <td style="text-align:center" onClick=window.location="#upper"><h3><font color="red">Option A</td>\
+   <td style="text-align:center" onClick=window.location="#upper"><h3><font color="red">Option B</td>\
+   <td style="text-align:center" onClick=window.location="#upper"><h3><font color="red">Not now</td></tr> \
  </table>\
  ';
  
+
+// Create template for checkboxes
+ var checkboxTemplate = '\
+ <table> \
+ <col width=20%> \
+ <col width=40%> \
+ <col width=10%> \
+ <col width=10%> \
+ <col width=10%> \
+ <tr><td><b>Attribute</td><td><b>Levels</td><td style="text-align:center"><b>Fixed?</td><td style="text-align:center"><b>Table</td><td style="text-align:center"><b>With</td></tr>\
+ <ul class="inputs-list">\
+ {{#attributes}}\
+ <tr><td>\
+<input type="checkbox" data-index="{{index}}" class="chck" {{^hidden}}checked="checked"{{/hidden}}> {{{name}}}\
+ </td><td class="levels">\
+	{{{levels}}}\
+ </td>\
+ <td class="chck" style="text-align:center">\
+   <input type="checkbox" id="chck-fixed-{{index}}" {{#fixed}}checked="checked"{{/fixed}}>\
+ </td><td style="text-align:center">\
+ 	{{table}}\
+ </td><td style="text-align:center">\
+ 	{{with}}\
+ </td>\
+  </tr>\
+ {{/attributes}}\
+ </ul>\
+ </table>\
+ ';
  // From http://sedition.com/perl/javascript-fy.html
  function fisherYates ( myArray ) {
    var i = myArray.length;
@@ -115,18 +132,24 @@
      var rand1 = Math.floor(Math.random()*attr['levels'].length)
      if($('#chck-fixed-'+attr['index']+':checked').length > 0) {
      	var rand2 = rand1
+     	var rand3 = rand1
      }
      else {
     	 var rand2 = Math.floor(Math.random()*attr['levels'].length)
+    	 var rand3 = Math.floor(Math.random()*attr['levels'].length)
      }
      attr['choice_a'] = attr['levels'][rand1]
      attr['choice_b'] = attr['levels'][rand2]
+     attr['choice_c'] = attr['levels'][rand3]
 
      attr['choice_a'] = attr['choice_a'].replace(">","\" width=\"150\" height=\"110\">")
      attr['choice_a'] = attr['choice_a'].replace("<","<br><img src=\"gr\\")
      
      attr['choice_b'] = attr['choice_b'].replace(">","\" width=\"150\" height=\"110\">")
      attr['choice_b'] = attr['choice_b'].replace("<","<br><img src=\"gr\\")
+
+     attr['choice_c'] = attr['choice_c'].replace(">","\" width=\"150\" height=\"110\">")
+     attr['choice_c'] = attr['choice_c'].replace("<","<br><img src=\"gr\\")
 
    });
    return data;
@@ -141,7 +164,6 @@
    tableData = randomizeLevels(tableData);
    updateTables(tableData);
  }
-
 
  function updateCheckboxes(template, data) {
    $('#checkboxes').html(Mustache.to_html(template, data));
@@ -169,6 +191,7 @@
    
    $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(data, 2)));
  }
+
 
 
  // Initially randomize data

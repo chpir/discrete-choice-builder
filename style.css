@@ -4,6 +4,7 @@
       }
       body {
         padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+        text-align: center; /* center align it with the container */
       }
       .container > footer p {
         text-align: center; /* center align it with the container */
@@ -41,7 +42,8 @@
       .content .span4 {
         margin-left: 0;
         padding-left: 19px;
-        border-left: 1px solid #eee;
+        border-left: 0px solid #eee;
+        border-bottom: 0px solid #eee;
       }
 
       .topbar .btn {
@@ -50,5 +52,13 @@
 
       table {
         width: 900px;
+ 		border-color: #eee;
+ 		border-width:0px;
+		border-style:none;
+		
+      }
+
+      .noborder {
+		border-width:0px;
       }
       
