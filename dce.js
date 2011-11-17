@@ -129,28 +129,17 @@
  function randomizeLevels(data) {
    // Randomize option a and option b
    $.each(data['attributes'], function(i, attr){
-     var rand1 = Math.floor(Math.random()*attr['levels'].length)
+     var rand1 = Math.floor(Math.random()*attr['levels']['english'].length)
      if($('#chck-fixed-'+attr['index']+':checked').length > 0) {
      	var rand2 = rand1
-     	var rand3 = rand1
      }
      else {
     	 var rand2 = Math.floor(Math.random()*attr['levels'].length)
-    	 var rand3 = Math.floor(Math.random()*attr['levels'].length)
      }
-     attr['choice_a'] = attr['levels'][rand1]
-     attr['choice_b'] = attr['levels'][rand2]
-     attr['choice_c'] = attr['levels'][rand3]
-
-     attr['choice_a'] = attr['choice_a'].replace(">","\" width=\"150\" height=\"110\">")
-     attr['choice_a'] = attr['choice_a'].replace("<","<br><img src=\"gr\\")
-     
-     attr['choice_b'] = attr['choice_b'].replace(">","\" width=\"150\" height=\"110\">")
-     attr['choice_b'] = attr['choice_b'].replace("<","<br><img src=\"gr\\")
-
-     attr['choice_c'] = attr['choice_c'].replace(">","\" width=\"150\" height=\"110\">")
-     attr['choice_c'] = attr['choice_c'].replace("<","<br><img src=\"gr\\")
-
+     attr['choice_a_english'] = attr['levels']['english'][rand1]
+     attr['choice_b_english'] = attr['levels']['english'][rand2]
+     attr['choice_a_swahili'] = attr['levels']['swahili'][rand1]
+     attr['choice_b_swahili'] = attr['levels']['swahili'][rand2]
    });
    return data;
  }
@@ -192,10 +181,19 @@
    $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(data, 2)));
  }
 
+ function english() {
+	 var language = "English";
+	 updateTables(tableData);
+ }
 
+ function swahili() {
+	 var language = "Swahili";
+	 updateTables(tableData);
+ }
 
  // Initially randomize data
  var tableData = randomizeLevels(randomizeAttributes(data));
+ var language = "English";
 
 
  $(function() { // This block runs on page load.
