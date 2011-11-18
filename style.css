@@ -61,4 +61,8 @@
       .noborder {
 		border-width:0px;
       }
+
+      .level-image {
+        display: none;
+      }
       

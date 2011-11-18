@@ -16,7 +16,7 @@
    </tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td style="padding:20"><b><font size=+1>{{{name}}}</b><br><br><br><br><br><br><br><br></td><td style="text-align:center"><font size=+1>{{{choice_a}}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}</td></tr> \
+       <tr><td style="padding:20"><b><font size=+1>{{{name}}}</b><br><br><br><br><br><br><br><br></td><td style="text-align:center"><font size=+1>{{{choice_a}}}<br>{{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}">{{/choice_a_image}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}">{{/choice_b_image}}</td></tr> \
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
@@ -38,7 +38,7 @@
    <td style="text-align:center"><h3>Not now</td></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td><b><font size=+1>{{name}}<br><br><br><br><br><br><br><br></font></td><td style="text-align:center"><font size=+1>{{{choice_a}}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}</td>\
+       <tr><td><b><font size=+1>{{name}}<br><br><br><br><br><br><br><br></font></td><td style="text-align:center"><font size=+1>{{{choice_a}}}<br>{{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}">{{/choice_a_image}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}">{{/choice_b_image}}</td>\
        <td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
@@ -91,7 +91,7 @@
     }
  }
 
- function randomizeAttributes(data) {
+ function randomizeAttributes() {
    var out = {'attributes': []}
    var len = data['attributes'].length;
 
@@ -123,10 +123,15 @@
        });
      }
    }
-   return out;
+   data = out;
+   englishData = dataForLanguage("english", data);
+   swahiliData = dataForLanguage("swahili", data);
+   if(data['attributes'][0]['choice_a_index']) {
+     addRandomLevelsToLanguages();
+   }
 }
 
- function randomizeLevels(data) {
+ function randomizeLevels() {
    // Randomize option a and option b
    $.each(data['attributes'], function(i, attr){
      var rand1 = Math.floor(Math.random()*attr['levels']['english'].length)
@@ -134,28 +139,46 @@
      	var rand2 = rand1
      }
      else {
-    	 var rand2 = Math.floor(Math.random()*attr['levels'].length)
+    	 var rand2 = Math.floor(Math.random()*attr['levels']['english'].length)
      }
-     attr['choice_a_english'] = attr['levels']['english'][rand1]
-     attr['choice_b_english'] = attr['levels']['english'][rand2]
-     attr['choice_a_swahili'] = attr['levels']['swahili'][rand1]
-     attr['choice_b_swahili'] = attr['levels']['swahili'][rand2]
+     attr['choice_a_index'] = rand1
+     attr['choice_b_index'] = rand2
+     addRandomLevelsToLanguages();
    });
-   return data;
  }
 
+
+function addRandomLevelsToLanguages() {
+  $.each(data['attributes'], function(i, attr){
+    englishData['attributes'][i]['choice_a'] = attr['levels']['english'][attr['choice_a_index']]
+    englishData['attributes'][i]['choice_b'] = attr['levels']['english'][attr['choice_b_index']]
+    englishData['attributes'][i]['choice_a_image'] = attr['images'][attr['choice_a_index']]
+    englishData['attributes'][i]['choice_b_image'] = attr['images'][attr['choice_b_index']]
+    swahiliData['attributes'][i]['choice_a'] = attr['levels']['swahili'][attr['choice_a_index']]
+    swahiliData['attributes'][i]['choice_b'] = attr['levels']['swahili'][attr['choice_b_index']]
+    swahiliData['attributes'][i]['choice_a_image'] = attr['images'][attr['choice_a_index']]
+    swahiliData['attributes'][i]['choice_b_image'] = attr['images'][attr['choice_b_index']]
+  });
+}
  function reRandomizeAttributes() {
-   tableData = randomizeAttributes(tableData);
-   updateTables(tableData);
+   randomizeAttributes();
+    updateTables();
  }
  
  function reRandomizeLevels() {
-   tableData = randomizeLevels(tableData);
-   updateTables(tableData);
+   randomizeLevels();
+   updateTables();
  }
 
- function updateCheckboxes(template, data) {
-   $('#checkboxes').html(Mustache.to_html(template, data));
+ function updateCheckboxes(template) {
+  var d;
+   if(language == "English") {
+    d = englishData;
+   }
+   else if(language == "Swahili") {
+    d = swahiliData;
+  }
+   $('#checkboxes').html(Mustache.to_html(template, d));
    $('.levels').each(function(i, elem) {
    		var $elem = $(elem);
    		var newHtml = "<ol>"+$.map($elem.text().split(/,/g), function(val) {
@@ -175,39 +198,61 @@
 	return out;
  }
  
- function updateTables(data) {
-   $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(data, 1)));
-   
-   $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(data, 2)));
+ function updateTables() {
+  var d;
+   if(language == "English") {
+    d = englishData;
+   }
+   else if(language == "Swahili") {
+    d = swahiliData;
+  }
+  $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(d, 1)));
+  
+  $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(d, 2)));
+
  }
 
  function english() {
-	 var language = "English";
-	 updateTables(tableData);
+	 language = "English";
+	 updateTables();
+   updateCheckboxes(checkboxTemplate);
  }
 
  function swahili() {
-	 var language = "Swahili";
-	 updateTables(tableData);
+	 language = "Swahili";
+	 updateTables();
+   updateCheckboxes(checkboxTemplate);
  }
 
+function dataForLanguage(language, data) {
+  var languageData = $.extend(true, {}, data); // Deep clone of data
+  $.each(languageData['attributes'], function(i){
+    languageData['attributes'][i]['name'] = languageData['attributes'][i]['name'][language];
+    languageData['attributes'][i]['levels'] = languageData['attributes'][i]['levels'][language];    
+  });
+  return languageData;
+}
+
  // Initially randomize data
- var tableData = randomizeLevels(randomizeAttributes(data));
+ var englishData;
+ var swahiliData;
+ randomizeAttributes(); // must run before randomizeLevels to instantiate the lang-specific obj
+ randomizeLevels();
  var language = "English";
 
 
+
  $(function() { // This block runs on page load.
-   
-   updateCheckboxes(checkboxTemplate, data);
-   updateTables(tableData);
+   updateCheckboxes(checkboxTemplate);
+   updateTables();
 
    // bind listener to clicks on checkboxes
    $('.chck').click(function() {
      $this = $(this)
-     $.each(tableData['attributes'], function(i, d){
+     $.each(data['attributes'], function(i, d){
        if (d['index'] == parseInt($this.data('index'))) {
          d['hidden'] = !$this.prop("checked");
-         updateTables(tableData);
+         updateTables();
          return false; //break
        }
      });
