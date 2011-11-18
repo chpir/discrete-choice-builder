@@ -1,26 +1,26 @@
 var data = {
-  'attributes': [
+  "attributes": [
     {
-      'name': { 
-      	'english': "Testing Venue",
-      	'swahili': "Eneo la upimaji",
+      "name": { 
+      	"english": "Testing Venue",
+      	"swahili": "Eneo la upimaji",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 			"Health centre",
 	        "Free-standing VCT" ,
 	        "Dispensary",
 	        "Mobile VCT",
 	        "Your home",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Kituo cha afya",
             "Kituo cha upimaji wa VVU",
             "Zahanati",
             "Upimaji wa kuhamahama(sokoni)",
             "Nyumbani kwako",
 	    ],
-      	'images': [
+      	"images": [
 			"hospital.jpg",
 	        "vct.jpg" ,
 	        "dispensary.jpg",
@@ -28,534 +28,534 @@ var data = {
 	        "home-based.jpg",
 	    ],
 		},      
-      'with': 3,
-      'hidden': false,
-      'table': 1
+      "with": 3,
+      "hidden": false,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Treatment availability",
-      	'swahili': "Upatikanaji wa Matibabu",
+      "name": { 
+      	"english": "Treatment availability",
+      	"swahili": "Upatikanaji wa Matibabu",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "HIV medications on-site",
 	        "Counselor escort you to CTC if HIV+",
 	        "Referral to CTC if HIV+",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Dawa za VVU zinapatikana hapa",
             "Counselor escort to CTC kama una VVU",
             "Rufaa kwenda CTC kama una VVU",
 	    ],
-      	'images': [
+      	"images": [
 	        "treatment.jpg",
 	        "",
 	        "referral.jpg",
 	    ],
 		},      
-      'with': 3,
-      'hidden': false,
-      'table': 1
+      "with": 3,
+      "hidden": false,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Mobile VCT sites",
-      	'swahili': "Eneo la upimaji wa kuhamahama",
+      "name": { 
+      	"english": "Mobile VCT sites",
+      	"swahili": "Eneo la upimaji wa kuhamahama",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Market",
 	        "Bus stand <busstand.jpg>",
 	        "Dispensary",
 	        "School",
 	        "Workplace",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Sokoni",
             "Kituo cha mabasi",
             "Zahanati",
             "Shule",
             "Sehemu ya Kazi",
 	    ],
-      	'images': [
+      	"images": [
         "",
         "busstand.jpg",
         "",
         "school.jpg",
 	    ],
 		},      
-      'with': 3,
-      'hidden': true,
-      'table': 1
+      "with": 3,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "HCT components",
-      	'swahili': "Swahili HCT components",
+      "name": { 
+      	"english": "HCT components",
+      	"swahili": "Swahili HCT components",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Counseling only",
 	        "Testing and counseling",
 	        "Testing only",
 	        "Self test",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Ushauri nasaha pekee",
             "Ushauri nasaha na upimaji wa VVU",
             "Upimaji wa VVU pekee",
             "Upimaji binafsi wa VVU",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "",
 	        "",
 	        "",
 	    ],
 		},      
-      'with': 3,
-      'hidden': true,
-      'table': 1
+      "with": 3,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Type of test",
-      	'swahili': "Aina ya kipimo",
+      "name": { 
+      	"english": "Type of test",
+      	"swahili": "Aina ya kipimo",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Blood draw",
 	        "Needle prick",
 	        "Oral swab",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Kutoa damu",
             "Kutobolewa kidole",
             "Kutolewa kipimo kwenye kinywa",
 	    ],
-      	'images': [
+      	"images": [
 	        "test_blood.jpg",
 	        "diabetes.jpg",
 	        "test_mouthswab.jpg",
 	    ],
 		},      
-      'with': false,
-      'hidden': false,
-      'table': 1
+      "with": false,
+      "hidden": false,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Confidentiality of results",
-      	'swahili': "Usiri wa matokeo",
+      "name": { 
+      	"english": "Confidentiality of results",
+      	"swahili": "Usiri wa matokeo",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Counselor tells you the result",
 	        "Counselor hands you a sealed envelope",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Mshauri anakuambia majibu yako",
             "Mshauri anakupatia majibu yako ndani ya bahasha iliyofungwa",
 	    ],
-      	'images': [
+      	"images": [
         "result_telling.jpg",
         "result_envelope.jpg",
 	    ],
 		},      
-      'with': false,
-      'hidden': true,
-      'table': 1
+      "with": false,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Test availability",
-      	'swahili': "Upatikanaji wa Kipimo",
+      "name": { 
+      	"english": "Test availability",
+      	"swahili": "Upatikanaji wa Kipimo",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Monday through Friday, 8am to 6pm",
 	        "Always open",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Jumatatu mpaka ijumaa, 2 asubuhi hadi 12 jioni",
             "Inapatikana wakati wote",
 	    ],
-      	'images': [
+      	"images": [
         "",
         "",
 	    ],
 		},      
-      'with': false,
-      'hidden': true,
-      'table': 1
+      "with": false,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Waiting time",
-      	'swahili': "Muda wa kusubiri",
+      "name": { 
+      	"english": "Waiting time",
+      	"swahili": "Muda wa kusubiri",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "No waiting time",
 	        "30 minutes waiting time",
 	        "1 hour waiting time",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Hakuna muda wa kusubiri",
             "Muda wa kusubiri ni dakika 30(nusu saa)",
             "Muda wa kusubiri ni dakika 60( saa nzima)",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "clock 30min.jpg",
 	        "clock 1hour.jpg",
 	    ],
 		},      
-      'with': false,
-      'hidden': true,
-      'table': 1
+      "with": false,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Test administration",
-      	'swahili': "Mtoa huduma",
+      "name": { 
+      	"english": "Test administration",
+      	"swahili": "Mtoa huduma",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Male clinician",
 	        "Female clinician",
 	        "Male counselor",
 	        "Female counselor",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Daktari mwanaume",
             "Daktari mwanamke",
             "Mshauri mwanaume",
             "Mshauri mwanamke",
 	    ],
-      	'images': [
+      	"images": [
 	        "male_doctor.jpg\" width=\"120\"",
 	        "female_doctor.jpg\" height=\"100\" width=\"85\"",
 	        "male_counselor.jpg\" width=\"95\"",
 	        "female_counselor.jpg",
 	    ],
 		},      
-      'with': 2,
-      'hidden': false,
-      'table': 1
+      "with": 2,
+      "hidden": false,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Counselor age",
-      	'swahili': "Umri wa mshauri nasaha",
+      "name": { 
+      	"english": "Counselor age",
+      	"swahili": "Umri wa mshauri nasaha",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Age 25",
 	        "Age 40",
 	        "Age 60",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Miaka 25",
             "Miaka 40",
             "Miaka 60",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "",
 	        "",
 	    ],
 		},    
-      'with': 2,
-      'hidden': true,
-      'table': 1
+      "with": 2,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Counselor origin",
-      	'swahili': "Sehemu anayotoka Mshauri Nasaha",
+      "name": { 
+      	"english": "Counselor origin",
+      	"swahili": "Sehemu anayotoka Mshauri Nasaha",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "From Moshi",
 	        "From another town",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Kutoka Moshi",
             "Kutoka nje ya Moshi",
 	    ],
-      	'images': [
+      	"images": [
         "",
         "",
 	    ],
 		},      
-      'with': 2,
-      'hidden': true,
-      'table': 1
+      "with": 2,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Counselor experience",
-      	'swahili': "Uzoefu ya mshauri nasaha",
+      "name": { 
+      	"english": "Counselor experience",
+      	"swahili": "Uzoefu ya mshauri nasaha",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Clinical officer",
 	        "Counselor",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Daktari",
             "Mshauri nasaha aliyefundishwa",
 	    ],
-      	'images': [
+      	"images": [
         "",
         "",
 	    ],
 		},      
-      'with': 2,
-      'hidden': true,
-      'table': 1
+      "with": 2,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Specific Location",
-      	'swahili': "Eneo",
+      "name": { 
+      	"english": "Specific Location",
+      	"swahili": "Eneo",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Moshi",
 	        "Arusha",
-	        "Boma N'gombe",
+	        "Boma N"gombe",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Moshi",
             "Arusha",
-            "Boma N'gombe",
+            "Boma N"gombe",
 	    ],
-      	'images': [
+      	"images": [
 	        "moshi.jpg",
 	        "arusha.jpg",
 	        "boma.jpg",
 	    ],
 		},      
-      'with': 1,
-      'hidden': false,
-      'table': 2
+      "with": 1,
+      "hidden": false,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Type of Location",
-      	'swahili': "Mahali",
+      "name": { 
+      	"english": "Type of Location",
+      	"swahili": "Mahali",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Town",
 	        "City",
 	        "Semi-urban area",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Mjini",
             "Jiji",
             "Nusu-mjini",
 	    ],
-      	'images': [
+      	"images": [
 	        "town.jpg",
 	        "city.jpg",
 	        "semiurban.jpg",
 	    ],
 		},      
-      'with': 1,
-      'hidden': true,
-      'table': 2
+      "with": 1,
+      "hidden": true,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Moshi vs. Elsewhere",
-      	'swahili': "Moshi au Sehemu ingine",
+      "name": { 
+      	"english": "Moshi vs. Elsewhere",
+      	"swahili": "Moshi au Sehemu ingine",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Moshi",
 	        "Urban area other than Moshi",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Moshi",
             "Mjini tofauti na Moshi",
 	    ],
-      	'images': [
+      	"images": [
 	        "moshi.jpg",
 	        "non-moshi.jpg",
 	    ],
 		},      
-      'with': 1,
-      'hidden': true,
-      'table': 2
+      "with": 1,
+      "hidden": true,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Travel cost",
-      	'swahili': "Nauli ya usafiri",
+      "name": { 
+      	"english": "Travel cost",
+      	"swahili": "Nauli ya usafiri",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 			"200 /=",
 	        "1000 /=",
 	        "5000 /=",
 	    ],
-      	'swahili': [
+      	"swahili": [
 			"200 /=",
 	        "1000 /=",
 	        "5000 /=",
 	    ],
-      	'images': [
+      	"images": [
 	        "TSH200.jpg\" height=\"80\" width=\"80\"",
 	        "TSH1000.jpg\" height=\"80\"",
 	        "TSH5000.jpg\" height=\"80\"",
 	    ],
 		},      
-      'with': 1,
-      'hidden': true,
-      'table': 2
+      "with": 1,
+      "hidden": true,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Travel mode",
-      	'swahili': "Aina ya usafiri",
+      "name": { 
+      	"english": "Travel mode",
+      	"swahili": "Aina ya usafiri",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Bus",
 	        "Private car",
 	        "Dala dala",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Basi",
             "Gari binafsi",
             "Dala dala",
 	    ],
-      	'images': [
+      	"images": [
 	        "bus.jpg\" width=\"115\"",
 	        "car.jpg\"  width=\"100\" height=\"90\"",
 	        "minibus.jpg\" width=\"100\"",
 	    ],
 		},      
-      'with': 1,
-      'hidden': false,
-      'table': 2
+      "with": 1,
+      "hidden": false,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Travel time",
-      	'swahili': "Muda wa kusafiri",
+      "name": { 
+      	"english": "Travel time",
+      	"swahili": "Muda wa kusafiri",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "30 minutes",
 	        "1 hour",
 	        "2 hours",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Dakika 30",
             "Saa 1",
             "Saa 2",
 	    ],
-      	'images': [
+      	"images": [
 	        "clock 30min.jpg",
 	        "clock 1hour.jpg",
 	        "clock 2hours.jpg",
 	    ],
 		},      
-      'with': 1,
-      'hidden': true,
-      'table': 2
+      "with": 1,
+      "hidden": true,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Travel Reimbursement",
-      	'swahili': "Fidia ya nauli",
+      "name": { 
+      	"english": "Travel Reimbursement",
+      	"swahili": "Fidia ya nauli",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "No Travel Reimbursement",
 	        "Reimbursement of travel cost",
 	        "Travel Reimbursement + 500 /=",
 	        "Travel Reimbursement + 2000 /=",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Hakuna fidia ya nauli",
             "Kuna fidia ya nauli",
             "Fidia ya nauli+ 500/=",
             "Fidia ya nauli+ 2000/=",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "reimbursement.jpg\" height=\"90\" width=\"110\"",
 	        "TSH500.jpg\" height=\"80\"",
 	        "TSH2000.jpg\" height=\"80\"",
 	    ],
 		},      
-      'with': 1,
-      'hidden': false,
-      'table': 2
+      "with": 1,
+      "hidden": false,
+      "table": 2
     },
     {
-      'name': { 
-      	'english': "Additional services",
-      	'swahili': "Huduma nyingine",
+      "name": { 
+      	"english": "Additional services",
+      	"swahili": "Huduma nyingine",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "No additional services",
 	        "Vaccinations",
 	        "Blood pressure screening",
 	        "Complete health check-up",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Hakuna huduma nyingine",
             "Chanjo",
             "Upimaji wa shinikizo la damu",
             "Upimaji wa afya",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "vaccinations.jpg",
 	        "blood_pressure.jpg",
 	        "vision_screening.jpg",
 	    ],
 		},      
-      'with': 3,
-      'hidden': true,
-      'table': 1
+      "with": 3,
+      "hidden": true,
+      "table": 1
     },
     {
-      'name': { 
-      	'english': "Testing with...",
-      	'swahili': "Kupima na...",
+      "name": { 
+      	"english": "Testing with...",
+      	"swahili": "Kupima na...",
 	    },
-      'levels': { 
-      	'english': [
+      "levels": { 
+      	"english": [
 	        "Alone",
 	        "with a spoouse or partner",
 	        "with your family",
 	        "with friends as part of a national campaign",
 	    ],
-      	'swahili': [
+      	"swahili": [
             "Mwenyewe",
             "Na mwenza au mke/mume",
             "Na familia yako",
             "Na rafiki wakati wa kampeni ya taifa",
 	    ],
-      	'images': [
+      	"images": [
 	        "",
 	        "",
 	        "",
 	        "",
 	    ],
 		},      
-      'with': 3,
-      'hidden': true,
-      'table': 1
+      "with": 3,
+      "hidden": true,
+      "table": 1
     },
  ]
 }
