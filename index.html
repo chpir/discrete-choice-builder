@@ -14,6 +14,7 @@
   <script src="jquery.tablesorter.min.js"></script>
   <script src="template.js"></script>
   <script src="dce.js"></script>
+
 </head>
 
 <body id="home">
@@ -21,8 +22,7 @@
     <div class="container">
       <div class="content">
         <div class="page-header">
-          <h1><center>"HIV counseling and testing preferences in Tanzania"</h1>
-          <h3><center>DCE sample builder</h3>
+          <h3><center>"HIV counseling and testing preferences in Tanzania"</h3>
         </div>
 		<center><b>Click <a href="#attributes">here</a> to select or un-select attributes</b>
       </div>
@@ -31,6 +31,7 @@
     	<p ALIGN="right"> 	
 	    	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+        	<a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
 	   		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 			<a href="#upper">upper</a> &nbsp;&nbsp; 
@@ -44,8 +45,8 @@
       <div class="content">
 		<a NAME="upper"></a>
         <div class="row">
-	        <div class="span15">
-				<h3>Please tell me which of these two HIV testing options you would prefer:</h3>
+	        <div class="span10">
+				<h3>Please tell me which of these two options you would prefer:</h3>
 		        <div id="table1"></div>
 	        </div>
 	        </div>
@@ -61,17 +62,19 @@
     	<p ALIGN="right"> 	
 	    	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+        <a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
 	   		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 			<a href="#upper">upper</a> &nbsp;&nbsp; 
 	    	<a href="#lower">lower</a> &nbsp;&nbsp; 
 		    <a href="#attributes">select</a> 
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 		<br>
     	<p ALIGN="right"> 	
 	    	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+        <a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
 	    	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
 	   		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 			<a href="#upper">upper</a> &nbsp;&nbsp; 
@@ -82,19 +85,21 @@
 		<a NAME="lower"></a>
 
         <div class="row">
-          <div class="span15">
+          <div class="span12">
 			<dl>
- 				<h3>If you were offered this test in the next month, would you test for HIV? <u>If yes</u>, in which location?</h3>
+ 				<h4>If you were offered this test in the next month, would you test for HIV? <p><b><u>If yes</u>, in which location?</p></h4>
             	<div id="table2"></div>
 			</dl>  
 	    </div>
       </div>
     </div>
             	
+
 		<br>            	
 		<p ALIGN="right">
     	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
     	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+      <a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
     	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
    		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 		<a href="#upper">upper</a> &nbsp;&nbsp; 
@@ -104,6 +109,7 @@
 		<p ALIGN="right">
     	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
     	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+      <a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
     	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
    		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 		<a href="#upper">upper</a> &nbsp;&nbsp; 
@@ -116,6 +122,7 @@
 		<p ALIGN="right">
     	<a href="#" onclick="swahili(); return false;"> swahili</a>&nbsp;&nbsp; 
     	<a href="#" onclick="english(); return false;"> english</a>&nbsp;&nbsp; 
+      <a href="#" onclick="$('.level-image').toggle(); return false;"> images</a>&nbsp;&nbsp; 
     	<a href="#" onclick="reRandomizeLevels(); return false;"> levels</a>&nbsp;&nbsp; 
    		<a href="#" onclick="reRandomizeAttributes(); return false;"> attributes</a> &nbsp;&nbsp; 
 		<a href="#upper">upper</a> &nbsp;&nbsp; 
