@@ -307,7 +307,7 @@ function dataForLanguage(language, data) {
 
  $(function() { // This block runs on page load.
    updateCheckboxes(checkboxTemplate);
-   reRandomizeLevels();
+   addRandomLevelsToLanguages();
    updateTables();
 
    // bind listener to clicks on checkboxes
