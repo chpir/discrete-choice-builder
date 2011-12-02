@@ -16,7 +16,11 @@
    </tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td style="padding:20"><b><font size=+0>{{{name}}}</b><br><br><br><br><br><br><br><br></td><td style="text-align:center"><font size=+0>{{{choice_a}}}<br>{{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}" {{{choice_a_specs}}}>{{/choice_a_image}}</td><td style="text-align:center"><font size=+0>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}" {{{choice_b_specs}}}>{{/choice_b_image}}</td></tr> \
+       <tr><td style="padding:20"><b><font size=+0>{{{name}}}</b><br><br><br><br><br><br><br></td>\
+       <td style="text-align:center" a href="#" onclick="reIncrementLevel({{{attribute_number}}}, 1); return false;"><font size=+0>{{{choice_a}}}<br>\
+           {{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}" {{{choice_a_specs}}}>{{/choice_a_image}}</td>\
+       <td style="text-align:center" a href="#" onclick="reIncrementLevel({{{attribute_number}}}, 2); return false;">\
+       <font size=+0>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}" {{{choice_b_specs}}}>{{/choice_b_image}}</td></tr> \
      {{/hidden}}\
    {{/attributes}}\
    <tr></tr>\
@@ -28,9 +32,9 @@
  var tableTemplate2 = '\
  <table style="text-align:center width="80%"> \
  <col width=10%> \
- <col width=23%> \
- <col width=23%> \
- <col width=15%> \
+ <col width=22%> \
+ <col width=22%> \
+ <col width=17%> \
    <tr> \
    <td></td>\
    <td style="text-align:center"><h3>Option A</td>\
@@ -38,7 +42,11 @@
    <td style="text-align:center"><h3>Not now</td></tr> \
    {{#attributes}}\
      {{^hidden}}\
-       <tr><td><b><font size=+1>{{name}}<br><br><br><br><br><br><br><br></font></td><td style="text-align:center"><font size=+1>{{{choice_a}}}<br>{{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}"  {{{choice_a_specs}}}>{{/choice_a_image}}</td><td style="text-align:center"><font size=+1>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}"  {{{choice_b_specs}}}>{{/choice_b_image}}</td>\
+       <tr><td style="padding:20"><b><font size=+0>{{{name}}}</b><br><br><br><br><br><br><br></td>\
+       <td style="text-align:center" a href="#" onclick="reIncrementLevel({{{attribute_number}}}, 1); return false;"><font size=+0>{{{choice_a}}}<br>\
+           {{#choice_a_image}}<img class="level-image" src="gr/{{{choice_a_image}}}" {{{choice_a_specs}}}>{{/choice_a_image}}</td>\
+       <td style="text-align:center" a href="#" onclick="reIncrementLevel({{{attribute_number}}}, 2); return false;">\
+       <font size=+0>{{{choice_b}}}<br>{{#choice_b_image}}<img class="level-image" src="gr/{{{choice_b_image}}}"  {{{choice_b_specs}}}>{{/choice_b_image}}</td>\
        <td></td></tr> \
      {{/hidden}}\
    {{/attributes}}\
@@ -144,8 +152,32 @@
      attr['choice_a_index'] = rand1
      attr['choice_b_index'] = rand2
      addRandomLevelsToLanguages();
-     
      implementConstraints();
+   });
+ }
+
+ function reIncrementLevel(attributeNumber, columnNumber) {
+   incrementLevel(attributeNumber, columnNumber);
+   updateTables();
+ }
+
+ function incrementLevel(attributeNumber, columnNumber) {
+   $.each(data['attributes'], function(i, attr){
+   	if (i==attributeNumber){
+		if (columnNumber==1){
+		   	attr['choice_a_index'] = attr['choice_a_index'] + 1;
+		   	if(attr['choice_a_index'] >= attr['levels']['english'].length) {
+		   		attr['choice_a_index'] = 0
+		   	};
+		};
+		if (columnNumber==2){
+		   	attr['choice_b_index'] = attr['choice_b_index'] + 1;
+		   	if(attr['choice_b_index'] >= attr['levels']['english'].length) {
+		   		attr['choice_b_index'] = 0
+		   	};
+		};
+	    addRandomLevelsToLanguages();
+	};
    });
  }
 
@@ -156,8 +188,15 @@ function implementConstraints() {
 
 function addRandomLevelsToLanguages() {
   $.each(data['attributes'], function(i, attr){
+    englishData['attributes'][i]['attribute_number'] = i 
+    swahiliData['attributes'][i]['attribute_number'] = i 
+
+    englishData['attributes'][i]['hidden'] = attr['hidden'] 
+    swahiliData['attributes'][i]['hidden'] = attr['hidden'] 
+
     englishData['attributes'][i]['choice_a'] = attr['levels']['english'][attr['choice_a_index']] 
     englishData['attributes'][i]['choice_b'] = attr['levels']['english'][attr['choice_b_index']]
+
     englishData['attributes'][i]['choice_a_image'] = attr['images'][attr['choice_a_index']] 
     englishData['attributes'][i]['choice_b_image'] = attr['images'][attr['choice_b_index']]
 
@@ -181,9 +220,6 @@ function addRandomLevelsToLanguages() {
     swahiliData['attributes'][i]['choice_b'] = attr['levels']['swahili'][attr['choice_b_index']]
     swahiliData['attributes'][i]['choice_a_image'] = attr['images'][attr['choice_a_index']]
     swahiliData['attributes'][i]['choice_b_image'] = attr['images'][attr['choice_b_index']]
-
-    swahiliData['attributes'][i]['choice_a_specs'] = "width=\"150\" height=\"110\"" 
-    swahiliData['attributes'][i]['choice_b_specs'] = "width=\"150\" height=\"110\"" 
 
   });
 }
@@ -236,9 +272,7 @@ function addRandomLevelsToLanguages() {
     d = swahiliData;
   }
   $('#table1').html(Mustache.to_html(tableTemplate1, getDataForTable(d, 1)));
-  
   $('#table2').html(Mustache.to_html(tableTemplate2, getDataForTable(d, 2)));
-
  }
 
  function english() {
@@ -250,7 +284,7 @@ function addRandomLevelsToLanguages() {
  function swahili() {
 	 language = "Swahili";
 	 updateTables();
-   updateCheckboxes(checkboxTemplate);
+     updateCheckboxes(checkboxTemplate);
  }
 
 function dataForLanguage(language, data) {
@@ -273,6 +307,7 @@ function dataForLanguage(language, data) {
 
  $(function() { // This block runs on page load.
    updateCheckboxes(checkboxTemplate);
+   reRandomizeLevels();
    updateTables();
 
    // bind listener to clicks on checkboxes
@@ -281,8 +316,9 @@ function dataForLanguage(language, data) {
      $.each(data['attributes'], function(i, d){
        if (d['index'] == parseInt($this.data('index'))) {
          d['hidden'] = !$this.prop("checked");
-         reRandomizeLevels();
-         return false; //break
+		addRandomLevelsToLanguages();
+	   	 updateTables();
+	     return false; //break
        };
      });
    });

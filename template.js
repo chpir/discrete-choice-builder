@@ -11,14 +11,14 @@ var data = {
                     "Health centre", 
                     "Free-standing VCT", 
                     "Dispensary", 
-                    "Mobile VCT", 
+                    "Mobile VCT (market)", 
                     "Your home"
                 ], 
                 "swahili": [
                     "Kituo cha afya", 
                     "Kituo cha upimaji wa VVU", 
                     "Zahanati", 
-                    "Upimaji wa kuhamahama(sokoni)", 
+                    "Upimaji wa kuhamahama (sokoni)", 
                     "Nyumbani kwako"
                 ]
             }, 
@@ -40,7 +40,7 @@ var data = {
             "with": 3
         }, 
         {
-            "hidden": false, 
+            "hidden": true, 
             "name": {
                 "english": "Treatment availability", 
                 "swahili": "Upatikanaji wa Matibabu"
@@ -48,7 +48,7 @@ var data = {
             "levels": {
                 "english": [
                     "HIV medications on-site", 
-                    "Counselor escort you to CTC if HIV+", 
+                    "Counselor escort to CTC if HIV+", 
                     "Referral to CTC if HIV+"
                 ], 
                 "swahili": [
@@ -113,7 +113,7 @@ var data = {
             "hidden": true, 
             "name": {
                 "english": "HCT components", 
-                "swahili": "Swahili HCT components"
+                "swahili": "HCT components"
             }, 
             "levels": {
                 "english": [
@@ -381,7 +381,7 @@ var data = {
             "with": 2
         }, 
         {
-            "hidden": false, 
+            "hidden": true, 
             "name": {
                 "english": "Specific Location", 
                 "swahili": "Eneo"
@@ -443,7 +443,7 @@ var data = {
             "with": 1
         }, 
         {
-            "hidden": true, 
+            "hidden": false, 
             "name": {
                 "english": "Moshi vs. Elsewhere", 
                 "swahili": "Moshi au Sehemu ingine"
@@ -502,6 +502,37 @@ var data = {
         }, 
         {
             "hidden": false, 
+            "name": {
+                "english": "Payment", 
+                "swahili": "Nauli"
+            }, 
+            "levels": {
+                "english": [
+                    "2000 /=", 
+                    "5000 /=", 
+                    "10000 /="
+                ], 
+                "swahili": [
+                    "2000 /=", 
+                    "5000 /=", 
+                    "10000 /="
+                ]
+            }, 
+            "images": [
+                "TSH2000.jpg\" height=\"80\"", 
+                "TSH5000.jpg\" height=\"80\"", 
+                "TSH10000.jpg\" height=\"80\""
+            ], 
+            "imagespecs": [
+                "", 
+                "", 
+                ""
+            ], 
+            "table": 1, 
+            "with": 1
+        }, 
+        {
+            "hidden": true, 
             "name": {
                 "english": "Travel mode", 
                 "swahili": "Aina ya usafiri"
@@ -563,7 +594,7 @@ var data = {
             "with": 1
         }, 
         {
-            "hidden": false, 
+            "hidden": true, 
             "name": {
                 "english": "Travel Reimbursement", 
                 "swahili": "Fidia ya nauli"
@@ -572,8 +603,8 @@ var data = {
                 "english": [
                     "No Travel Reimbursement", 
                     "Reimbursement of travel cost", 
-                    "Travel Reimbursement + 500 /=", 
-                    "Travel Reimbursement + 2000 /="
+                    "Travel Reimbursement + 2000 /=", 
+                    "Travel Reimbursement + 10,000 /="
                 ],
                 "swahili": [
                     "Hakuna fidia ya nauli", 
@@ -585,8 +616,8 @@ var data = {
             "images": [
                 "", 
                 "reimbursement.jpg\" height=\"90\" width=\"110\"", 
-                "TSH500.jpg\" height=\"80\"", 
-                "TSH2000.jpg\" height=\"80\""
+                "TSH2000.jpg\" height=\"80\"", 
+                "TSH10000.jpg\" height=\"80\""
             ], 
             "imagespecs": [
                 "", 
@@ -641,26 +672,18 @@ var data = {
             "levels": {
                 "english": [
                     "Alone", 
-                    "with a spoouse or partner", 
-                    "with your family", 
-                    "with friends as part of a national campaign"
+                    "With a spouse or partner" 
                 ], 
                 "swahili": [
                     "Mwenyewe", 
-                    "Na mwenza au mke/mume", 
-                    "Na familia yako", 
-                    "Na rafiki wakati wa kampeni ya taifa"
+                    "Na mwenza au mke/mume"
                 ]
             },
             "images": [
                 "", 
-                "", 
-                "", 
                 ""
             ],
             "imagespecs": [
-                "", 
-                "", 
                 "", 
                 ""
             ], 
