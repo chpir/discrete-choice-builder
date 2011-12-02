@@ -690,5 +690,21 @@ var data = {
             "table": 1, 
             "with": 3
         }
+    ], 
+    "constraints": [
+        {
+        	"no": true,
+            "a1": "Additional services", 
+            "l1": "",
+            "a2": "Testing Venue", 
+            "l1": "Your home"
+        }, 
+        {
+        	"no": true,
+            "a1": "Treatment availability", 
+            "l1": "HIV medications on-site",
+            "a2": "Testing Venue", 
+            "l1": "Your home"
+        }
     ]
 }
