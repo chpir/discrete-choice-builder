@@ -3,6 +3,10 @@
    item['index'] = i
  })
  
+ $.each(data['constraints'], function(j, constr) {
+   constr['index'] = j
+ })
+
  // Create template for table
  var tableTemplate1 = '\
  <table style="text-align:center width="80%"> \
@@ -182,7 +186,7 @@
  }
 
 function implementConstraints() {
-   $.each(englishData['attributes'], function(i, attr){
+   $.each(data['attributes'], function(i, attr){
    });
 }
 
