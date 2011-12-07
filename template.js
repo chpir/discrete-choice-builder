@@ -8,6 +8,7 @@ var data = {
             }, 
             "levels": {
                 "english": [
+                    "Hospital", 
                     "Health centre", 
                     "Free-standing VCT", 
                     "Dispensary", 
@@ -15,6 +16,7 @@ var data = {
                     "Your home"
                 ], 
                 "swahili": [
+                    "Hospitali", 
                     "Kituo cha afya", 
                     "Kituo cha upimaji wa VVU", 
                     "Zahanati", 
@@ -24,6 +26,7 @@ var data = {
             }, 
             "images": [
                 "hospital.jpg", 
+                "health_center.jpg", 
                 "vct.jpg", 
                 "dispensary.jpg", 
                 "mobile.jpg", 
@@ -34,13 +37,14 @@ var data = {
                 "width=\"150\" height=\"110\"", 
                 "width=\"150\" height=\"110\"", 
                 "width=\"150\" height=\"110\"", 
+                "width=\"150\" height=\"110\"", 
                 "width=\"150\" height=\"110\""
             ], 
             "table": 1, 
             "with": 3
         }, 
         {
-            "hidden": true, 
+            "hidden": false, 
             "name": {
                 "english": "Treatment availability", 
                 "swahili": "Upatikanaji wa Matibabu"
@@ -48,22 +52,18 @@ var data = {
             "levels": {
                 "english": [
                     "HIV medications on-site", 
-                    "Counselor escort to CTC if HIV+", 
                     "Referral to CTC if HIV+"
                 ], 
                 "swahili": [
                     "Dawa za VVU zinapatikana hapa", 
-                    "Counselor escort to CTC kama una VVU", 
                     "Rufaa kwenda CTC kama una VVU"
                 ]
             }, 
             "images": [
                 "treatment.jpg", 
-                "", 
                 "referral.jpg"
             ], 
             "imagespecs": [
-                "", 
                 "", 
                 ""
             ], 
@@ -110,39 +110,62 @@ var data = {
             "with": 3
         }, 
         {
-            "hidden": true, 
+            "hidden": false, 
             "name": {
-                "english": "HCT components", 
-                "swahili": "HCT components"
+                "english": "Test availability", 
+                "swahili": "Upatikanaji wa Kipimo"
             }, 
             "levels": {
                 "english": [
-                    "Counseling only", 
-                    "Testing and counseling", 
-                    "Testing only", 
-                    "Self test"
+                    "Monday through Friday, 8am to 6pm", 
+                    "Anytime"
                 ], 
                 "swahili": [
-                    "Ushauri nasaha pekee", 
-                    "Ushauri nasaha na upimaji wa VVU", 
-                    "Upimaji wa VVU pekee", 
-                    "Upimaji binafsi wa VVU"
+                    "Jumatatu mpaka ijumaa, 2 asubuhi hadi 12 jioni", 
+                    "Inapatikana wakati wote"
                 ]
-            }, 
+            },
             "images": [
-                "", 
-                "", 
                 "", 
                 ""
             ], 
             "imagespecs": [
                 "", 
+                ""
+            ], 
+            "table": 1, 
+            "with": 2
+        }, 
+        {
+            "hidden": false, 
+            "name": {
+                "english": "Waiting time", 
+                "swahili": "Muda wa kusubiri"
+            }, 
+            "levels": {
+                "english": [
+                    "No waiting time", 
+                    "30 minutes waiting time", 
+                    "1 hour waiting time"
+                ], 
+                "swahili": [
+                    "Hakuna muda wa kusubiri", 
+                    "Muda wa kusubiri ni dakika 30(nusu saa)", 
+                    "Muda wa kusubiri ni dakika 60( saa nzima)"
+                ]
+            }, 
+            "images": [
+                "", 
+                "clock 30min.jpg", 
+                "clock 1hour.jpg"
+            ], 
+            "imagespecs": [
                 "", 
                 "", 
                 ""
             ], 
             "table": 1, 
-            "with": 3
+            "with": 2
         }, 
         {
             "hidden": false, 
@@ -173,73 +196,19 @@ var data = {
                 ""
             ], 
             "table": 1, 
-            "with": false
+            "with": 2
         }, 
         {
-            "hidden": true, 
+            "hidden": false, 
             "name": {
-                "english": "Confidentiality of results", 
-                "swahili": "Usiri wa matokeo"
-            }, 
-            "levels": {
-                "english": [
-                    "Counselor tells you the result", 
-                    "Counselor hands you a sealed envelope"
-                ], 
-                "swahili": [
-                    "Mshauri anakuambia majibu yako", 
-                    "Mshauri anakupatia majibu yako ndani ya bahasha iliyofungwa"
-                ]
-            }, 
-            "images": [
-                "result_telling.jpg", 
-                "result_envelope.jpg"
-            ], 
-            "imagespecs": [
-                "", 
-                ""
-            ], 
-            "table": 1, 
-            "with": false
-        }, 
-        {
-            "hidden": true, 
-            "name": {
-                "english": "Test availability", 
-                "swahili": "Upatikanaji wa Kipimo"
-            }, 
-            "levels": {
-                "english": [
-                    "Monday through Friday, 8am to 6pm", 
-                    "Always open"
-                ], 
-                "swahili": [
-                    "Jumatatu mpaka ijumaa, 2 asubuhi hadi 12 jioni", 
-                    "Inapatikana wakati wote"
-                ]
-            },
-            "images": [
-                "", 
-                ""
-            ], 
-            "imagespecs": [
-                "", 
-                ""
-            ], 
-            "table": 1, 
-            "with": false
-        }, 
-        {
-            "hidden": true, 
-            "name": {
-                "english": "Waiting time", 
+                "english": "Counseling time", 
                 "swahili": "Muda wa kusubiri"
             }, 
             "levels": {
                 "english": [
-                    "No waiting time", 
-                    "30 minutes waiting time", 
-                    "1 hour waiting time"
+                    "15 minutes", 
+                    "45 minutes", 
+                    "2 hours"
                 ], 
                 "swahili": [
                     "Hakuna muda wa kusubiri", 
@@ -249,8 +218,8 @@ var data = {
             }, 
             "images": [
                 "", 
-                "clock 30min.jpg", 
-                "clock 1hour.jpg"
+                "", 
+                ""
             ], 
             "imagespecs": [
                 "", 
@@ -258,10 +227,10 @@ var data = {
                 ""
             ], 
             "table": 1, 
-            "with": false
+            "with": 2
         }, 
         {
-            "hidden": false, 
+            "hidden": true, 
             "name": {
                 "english": "Test administration", 
                 "swahili": "Mtoa huduma"
@@ -443,7 +412,7 @@ var data = {
             "with": 1
         }, 
         {
-            "hidden": false, 
+            "hidden": true, 
             "name": {
                 "english": "Moshi vs. Elsewhere", 
                 "swahili": "Moshi au Sehemu ingine"
@@ -503,6 +472,45 @@ var data = {
         {
             "hidden": false, 
             "name": {
+                "english": "Who asks you to test", 
+                "swahili": "Nani anakuuliza..."
+            }, 
+            "levels": {
+                "english": [
+                    "Noone", 
+                    "Local government or church leader", 
+                    "Doctor or nurse", 
+                    "Spouse/partner", 
+                    "Close friend"
+                ], 
+                "swahili": [
+                    "", 
+                    "", 
+                    "", 
+                    "", 
+                    ""
+                ]
+            }, 
+            "images": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "imagespecs": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "table": 2, 
+            "with": 1
+        }, 
+        {
+            "hidden": false, 
+            "name": {
                 "english": "Payment", 
                 "swahili": "Nauli"
             }, 
@@ -528,7 +536,7 @@ var data = {
                 "", 
                 ""
             ], 
-            "table": 1, 
+            "table": 2, 
             "with": 1
         }, 
         {
@@ -661,10 +669,72 @@ var data = {
                 ""
             ], 
             "table": 1, 
+            "with": false
+        }, 
+         {
+            "hidden": true, 
+            "name": {
+                "english": "HCT components", 
+                "swahili": "HCT components"
+            }, 
+            "levels": {
+                "english": [
+                    "Counseling only", 
+                    "Testing and counseling", 
+                    "Testing only", 
+                    "Self test"
+                ], 
+                "swahili": [
+                    "Ushauri nasaha pekee", 
+                    "Ushauri nasaha na upimaji wa VVU", 
+                    "Upimaji wa VVU pekee", 
+                    "Upimaji binafsi wa VVU"
+                ]
+            }, 
+            "images": [
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "imagespecs": [
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "table": 1, 
             "with": 3
         }, 
         {
             "hidden": true, 
+            "name": {
+                "english": "Confidentiality of results", 
+                "swahili": "Usiri wa matokeo"
+            }, 
+            "levels": {
+                "english": [
+                    "Counselor tells you the result", 
+                    "Counselor hands you a sealed envelope"
+                ], 
+                "swahili": [
+                    "Mshauri anakuambia majibu yako", 
+                    "Mshauri anakupatia majibu yako ndani ya bahasha iliyofungwa"
+                ]
+            }, 
+            "images": [
+                "result_telling.jpg", 
+                "result_envelope.jpg"
+            ], 
+            "imagespecs": [
+                "", 
+                ""
+            ], 
+            "table": 1, 
+            "with": false
+        }, 
+       {
+            "hidden": false, 
             "name": {
                 "english": "Testing with...", 
                 "swahili": "Kupima na..."
@@ -687,8 +757,8 @@ var data = {
                 "", 
                 ""
             ], 
-            "table": 1, 
-            "with": 3
+            "table": 2, 
+            "with": false
         }
     ], 
     "constraints": [
